@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Nunito",sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center; /*centra el contenido*/
+    min-height: 100vh; /*tamaño minimo = 100% de la imagen*/
+    align-items: center;
+
+    background: url(/img/Captura_de_pantalla_2022-10-11_160109.png);
+    background-repeat: no-repeat; /*evita que se repita la imagen*/
+    background-size: cover; /*Hace que la imagen tome el tamaño de la pantalla*/
+    backdrop-filter: blur(6px) ; /*difuminado*/
+}
+
+body::before{ /*capa por encima mas oscura*/
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3); /*mezcla de colores de la capa/ ultimo calor = opacidad*/
+    /*desde donde hasta donde ocupa*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1; /*lo posicionamos en la capa 1*/
+}
+
+body > *{
+    position: relative;
+    z-index: 2; /*Posicionamos todo lo demas en la capa 2*/
+
+}
+
+.reproductor-musica{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 380px;
+    padding: 10px 30px; /*arriba-abajo / izquierda-derecha*/
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.123); /*recuadro del reproductor*/
+}
+
+.reproductor-musica h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.reproductor-musica p{
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    opacity: 0.5;
+}
+
+.controles{
+    display: flex;
+    justify-content: center;
+
+}
+
+.controles button{
+    width: 50px;
+    aspect-ratio: 1/1; /*---------------------------------------------------------*/
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.247);
+    color: white;
+    border-radius: 50%;
+    border: 1px solid;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.295);
+    cursor: pointer;
+    transition: all 0.1s linear; /*transicion*/
+}
+.controles .control:hover{
+    transform: scale(1.1); /*escala cuando pasas por encima */
+}
+
+.controles .reproducir-parar:hover{
+    transform: scale(1.1);
+}
