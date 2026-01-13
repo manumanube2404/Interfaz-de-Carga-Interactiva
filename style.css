@@ -61,6 +61,27 @@ body > *{
     opacity: 0.5;
 }
 
+#progreso{
+    appearance: none;
+    width: 100%;
+    height: 7px;
+    background: rgba(165, 165, 165, 0.4);
+    border-radius: 4px;
+    margin: 32px 0 24px;
+    cursor: pointer;
+    
+}
+
+#progreso::-webkit-slider-thumb{
+    appearance: none;
+    background: rgba(165, 165, 165, 0.9);
+    width: 16px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    outline: 4px solid white;
+    box-shadow: 0 6px 10px rgba(228, 228, 228, 0.3);
+}
+
 .controles{
     display: flex;
     justify-content: center;
@@ -69,7 +90,7 @@ body > *{
 
 .controles button{
     width: 50px;
-    aspect-ratio: 1/1; /*---------------------------------------------------------*/
+    aspect-ratio: 1/1; /*Los hace cuadrados recuadros perfectos*/
     margin: 20px;
     background-color: rgba(255, 255, 255, 0.247);
     color: white;
