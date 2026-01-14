@@ -19,17 +19,17 @@
             <source src="" type="audio/mpeg">
         </audio>
         <div class="volumen">
-            <i class="bi bi-volume-up-fill"></i><input type="range" value="0" id="barra-volumen">
+            <button><i class="bi bi-volume-up-fill"></button></i><input type="range" value="0" id="barra-volumen">
         </div>
         <div class="controles">
-            <button class="atras control"><i class="bi bi-rewind-fill"></i></button>
+            <button class="atras control" onclick="cambiarCancion(0)"><i class="bi bi-rewind-fill"></i></button>
             <button class="mute-unmute" onclick="pausar()"><i class="bi bi-play-fill" id="iconoMute"></i></button>
-            <button class="siguiente control"><i class="bi bi-fast-forward-fill"></i></button>
+            <button class="siguiente control" onclick="cambiarCancion(1)"><i class="bi bi-fast-forward-fill"></i></button>
         </div>
         <div class="iconos">
-            <i class="bi bi-discord"></i>
-            <i class="bi bi-youtube"></i>
-            <i class="bi bi-paypal"></i>
+            <a href="#"><i class="bi bi-discord"></i></a>
+            <a href=""><i class="bi bi-youtube"></i></a>
+            <a href=""><i class="bi bi-paypal"></i></a>
         </div>
     </section>
 

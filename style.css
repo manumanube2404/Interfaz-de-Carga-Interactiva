@@ -68,6 +68,14 @@ body > *{
     width: 100%;
 
 }
+
+.volumen button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
 .volumen input{
     appearance: none;
     width: 100%;
@@ -79,8 +87,8 @@ body > *{
 }
 
 .volumen i{
+    color: white;
     font-size: 25px;
-    margin-top: 10px;
 }
 
 .volumen input::-webkit-slider-thumb{
@@ -124,6 +132,10 @@ body > *{
     display:flex;
     justify-content: center;
     gap: 40%;
+}
+
+.iconos a{
+    color: #ffffff;
 }
 
 .iconos i{
