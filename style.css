@@ -15,7 +15,7 @@ body{
     background: url(/img/Captura_de_pantalla_2022-10-11_160109.png);
     background-repeat: no-repeat; /*evita que se repita la imagen*/
     background-size: cover; /*Hace que la imagen tome el tamaño de la pantalla*/
-    backdrop-filter: blur(6px) ; /*difuminado*/
+    backdrop-filter: blur(3px) ; /*difuminado*/
 }
 
 body::before{ /*capa por encima mas oscura*/
@@ -61,7 +61,14 @@ body > *{
     opacity: 0.5;
 }
 
-#progreso{
+.volumen {
+    display: flex;
+    align-items: center; /* centra verticalmente */
+    gap: 8px; /* espacio entre el icono y el range */
+    width: 100%;
+
+}
+.volumen input{
     appearance: none;
     width: 100%;
     height: 7px;
@@ -69,10 +76,14 @@ body > *{
     border-radius: 4px;
     margin: 32px 0 24px;
     cursor: pointer;
-    
 }
 
-#progreso::-webkit-slider-thumb{
+.volumen i{
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.volumen input::-webkit-slider-thumb{
     appearance: none;
     background: rgba(165, 165, 165, 0.9);
     width: 16px;
@@ -106,5 +117,5 @@ body > *{
 }
 
 .controles .reproducir-parar:hover{
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
