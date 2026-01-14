@@ -116,7 +116,7 @@ body > *{
     transform: scale(1.1); /*escala cuando pasas por encima */
 }
 
-.controles .reproducir-parar:hover{
+.controles .mute-unmute:hover{
     transform: scale(1.2);
 }
 

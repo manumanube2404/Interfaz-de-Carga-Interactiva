@@ -15,15 +15,15 @@
     <section class="reproductor-musica">
         <h1>Titulo</h1>
         <p>Nombre</p>
-        <audio>
+        <audio id="cancion">
             <source src="" type="audio/mpeg">
         </audio>
         <div class="volumen">
-            <i class="bi bi-volume-up-fill"></i><input type="range" value="0" id="progreso">
+            <i class="bi bi-volume-up-fill"></i><input type="range" value="0" id="barra-volumen">
         </div>
         <div class="controles">
             <button class="atras control"><i class="bi bi-rewind-fill"></i></button>
-            <button class="reproducir-parar"><i class="bi bi-play-fill" id="iconoPausa"></i></button>
+            <button class="mute-unmute" onclick="pausar()"><i class="bi bi-play-fill" id="iconoMute"></i></button>
             <button class="siguiente control"><i class="bi bi-fast-forward-fill"></i></button>
         </div>
         <div class="iconos">
