@@ -116,19 +116,19 @@ function cambiarCancion(num) { //Cambia la cancion seleccionada
     actualizar();
 
 }
-
-document.addEventListener('keydown', (letras) => {
-    switch (letras.key) {
+ 
+document.addEventListener('keydown', (letras) => { //keydown , utiliza las letras del teclado 
+    switch (letras.key) { //detecta las letras introducidas por teclado
         case "ArrowRight": // flecha derecha
             cambiarCancion(1);
             break;
         case "ArrowLeft": // flecha izquierda
             cambiarCancion(0);
             break;
-        case "e": // espacio
+        case "Enter": // enter para mutearse
             pausar();
             break;
-        case " ": // letra m para mute
+        case " ":  // espacio
             mute();
             break;
     }
