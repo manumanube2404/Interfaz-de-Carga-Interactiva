@@ -55,7 +55,8 @@ body > *{
 }
 
 .reproductor-musica p{
-    font-size: 1rem;
+    margin-top: 10px;
+    font-size: 1.2rem;
     font-weight: 600;
     line-height: 1.6;
     opacity: 0.5;
@@ -73,7 +74,7 @@ body > *{
     background: none;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .volumen input{
@@ -82,7 +83,7 @@ body > *{
     height: 7px;
     background: rgba(165, 165, 165, 0.4);
     border-radius: 4px;
-    margin: 32px 0 24px;
+    margin: 25px 0 24px;
     cursor: pointer;
 }
 

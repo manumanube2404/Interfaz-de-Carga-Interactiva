@@ -13,25 +13,25 @@
 <body>
 
     <section class="reproductor-musica">
-        <h1>Titulo</h1>
-        <p>Nombre</p>
+        <h1>Titulo</h1> <!-- titulo de la cancion -->
+        <p>JOINING SERVER</p> <!-- texto dinamico -->
         <audio id="cancion">
-            <source src="" type="audio/mpeg">
+            <source src="" type="audio/mpeg"> <!-- audio -->
         </audio>
         <div class="volumen">
-            <button class="mute-unmute" onclick="mute()"><i class="bi bi-volume-up-fill" id="iconoMute"></i></button>
-            <input type="range" id="barra-volumen" min="0" max="1" step="0.01" value="1">
+            <button class="mute-unmute" onclick="mute()"><i class="bi bi-volume-up-fill" id="iconoMute"></i></button> <!-- boton Mute -->
+            <input type="range" id="barra-volumen" min="0" max="1" step="0.01" value="1"> <!-- barra volumen: step-> de cuanto en cuanto avanza/ value: valor inicial (los <audios> solo aceptan valores de 0 a 1) -->
 
         </div>
         <div class="controles">
-            <button class="atras control" onclick="cambiarCancion(0)"><i class="bi bi-rewind-fill"></i></button>
-            <button class="pausar-despausar" onclick="pausar()"><i class="bi bi-play-fill" id="iconoPausa"></i></button>
-            <button class="siguiente control" onclick="cambiarCancion(1)"><i class="bi bi-fast-forward-fill"></i></button>
+            <button class="atras control" onclick="cambiarCancion(0)"><i class="bi bi-rewind-fill"></i></button> <!-- anterior -->
+            <button class="pausar-despausar" onclick="pausar()"><i class="bi bi-play-fill" id="iconoPausa"></i></button> <!-- pausar -->
+            <button class="siguiente control" onclick="cambiarCancion(1)"><i class="bi bi-fast-forward-fill"></i></button> <!-- siguiente -->
         </div>
         <div class="iconos">
-            <a href="#"><i class="bi bi-discord"></i></a>
-            <a href="#"><i class="bi bi-youtube"></i></a>
-            <a href="#"><i class="bi bi-paypal"></i></a>
+            <a href="https://www.disboard.org/es/server/join/1062056367294271488"><i class="bi bi-discord"></i></a>
+            <a href="https://www.youtube.com/@juandavid_dev"><i class="bi bi-youtube"></i></a>
+            <a href="https://eacnur.org/es/protejamos-las-familias-este-invierno?utm_source=gads&utm_medium=cpc&utm_campaign=ES_ES_Winterization&gad_source=1&gad_campaignid=22194499400&gclid=CjwKCAiAvaLLBhBFEiwAYCNTfwXDgBN46Rlk2KOyDSHIa3rJs2dmI998CIH6w0ZP1Q1XK2yuWGZDFBoCXiIQAvD_BwE"><i class="bi bi-paypal"></i></a>
         </div>
     </section>
 

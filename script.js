@@ -1,5 +1,5 @@
 const titulo = document.querySelector('.reproductor-musica h1');
-const parrafo = document.querySelector('.reproductor-musica p');
+const texto_dinamico = document.querySelector('.reproductor-musica p');
 
 const volumen = document.getElementById('barra-volumen');
 const cancion = document.getElementById('cancion');
@@ -8,26 +8,38 @@ const btn_atras = document.querySelector('.atras');
 const btn_siguiente = document.querySelector('.siguiente');
 
 const btn_mute = document.querySelector('.mute-unmute');
-const iconoMute=document.getElementById('iconoMute');
+const iconoMute = document.getElementById('iconoMute');
 
-const iconoPausa=document.getElementById('iconoPausa');
+const iconoPausa = document.getElementById('iconoPausa');
 
+let estadosCarga = [ //array de texto dinamico
+    "JOINING SERVER",
+    "PREPARING ASSETS",
+    "ESTABLISHING CONNECTION"
+];
+
+let estadoActual = 0;
+
+setInterval(() => {
+    texto_dinamico.textContent = estadosCarga[estadoActual]; //cambia el texto actual, por uno de la array 
+    estadoActual = (estadoActual + 1) % estadosCarga.length; //le suma uno al contador
+}, 2000); //cada 2seg = 2000 miliseg
 
 volumen.addEventListener('input', () => {
-    cancion.volume = volumen.value;
-    if(cancion.muted==true){
-        cancion.muted=false;
+    cancion.volume = volumen.value; //cambia el volumen de la cancion
+    if (cancion.muted == true) {
+        cancion.muted = false;
     }
-    if(cancion.volume==0){
-        iconoMute.classList.add('bi-volume-mute-fill');
-        iconoMute.classList.remove('bi-volume-up-fill');
-    }else{
+    if (cancion.volume == 0) {
+        iconoMute.classList.add('bi-volume-mute-fill'); //añade la clase bi-volume-mute-fill al elemento con id: iconoMute
+        iconoMute.classList.remove('bi-volume-up-fill'); //elimina la clase bi-volume-up-fill al elemento con id: iconoMute
+    } else {
         iconoMute.classList.remove('bi-volume-mute-fill');
         iconoMute.classList.add('bi-volume-up-fill');
     }
 });
 
-const canciones = [
+const canciones = [ //array con nombres y rutas de las canciones
 
     {
         titulo: 'The Spectacular Spider-Man',
@@ -50,20 +62,20 @@ const canciones = [
 let CancionActual = 0
 
 function actualizar() {
-    titulo.textContent = canciones[CancionActual].titulo;
-    cancion.src = canciones[CancionActual].ruta;
+    titulo.textContent = canciones[CancionActual].titulo; //cambia el titulo de la cancion
+    cancion.src = canciones[CancionActual].ruta; //reproduce la cancion
     pausar();
 }
 
 function mute() {
     if (cancion.muted == false) {
-        cancion.muted = true;
+        cancion.muted = true; //mutea la cancion
         iconoMute.classList.add('bi-volume-mute-fill');
         iconoMute.classList.remove('bi-volume-up-fill');
     } else {
         iconoMute.classList.remove('bi-volume-mute-fill');
         iconoMute.classList.add('bi-volume-up-fill');
-        cancion.muted = false;
+        cancion.muted = false; //desmutea la cancion
     }
 }
 
@@ -72,7 +84,7 @@ function pausar() {
         reproducirCancion();
         iconoPausa.classList.add('bi-pause-fill');
         iconoPausa.classList.remove('bi-play-fill');
-    }else{
+    } else {
         iconoPausa.classList.remove('bi-pause-fill');
         iconoPausa.classList.add('bi-play-fill');
         pausarCancion();
@@ -80,30 +92,48 @@ function pausar() {
 }
 
 
-function reproducirCancion() {
+function reproducirCancion() { //reproduce la cancion
     cancion.play();
 
 }
 
-function pausarCancion(){
+function pausarCancion() { //pausa la cancion
     cancion.pause();
 }
 
-function cambiarCancion(num){
-    if(num==0){
-        CancionActual-=1
-        if(CancionActual<0){
-            CancionActual=canciones.length-1
+function cambiarCancion(num) { //Cambia la cancion seleccionada
+    if (num == 0) { //se elige la anterior cancion en la array
+        CancionActual -= 1
+        if (CancionActual < 0) {
+            CancionActual = canciones.length - 1
         }
-    }else{
-        CancionActual+=1
-        if(CancionActual>=canciones.length){
-            CancionActual=0
+    } else { //se elige la siguiente cancion en la array
+        CancionActual += 1
+        if (CancionActual >= canciones.length) {
+            CancionActual = 0
         }
     }
     actualizar();
 
 }
 
+document.addEventListener('keydown', (letras) => {
+    switch (letras.key) {
+        case "ArrowRight": // flecha derecha
+            cambiarCancion(1);
+            break;
+        case "ArrowLeft": // flecha izquierda
+            cambiarCancion(0);
+            break;
+        case "e": // espacio
+            pausar();
+            break;
+        case " ": // letra m para mute
+            mute();
+            break;
+    }
+});
 
-actualizar();
+
+
+actualizar(); //hace que la cancion se active nada mas abrir la pagina
