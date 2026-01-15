@@ -37,8 +37,7 @@ let CancionActual = 0
 function actualizar() {
     titulo.textContent = canciones[CancionActual].titulo;
     cancion.src = canciones[CancionActual].ruta;
-    cancion.addEventListener('loadeddata', function () { });
-    reproducirCancion();
+    pausar();
 }
 
 function mute() {
