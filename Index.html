@@ -19,7 +19,9 @@
             <source src="" type="audio/mpeg">
         </audio>
         <div class="volumen">
-            <button class="mute-unmute" onclick="mute()"><i class="bi bi-volume-up-fill" id="iconoMute"></i></button><input type="range" value="0" id="barra-volumen">
+            <button class="mute-unmute" onclick="mute()"><i class="bi bi-volume-up-fill" id="iconoMute"></i></button>
+            <input type="range" id="barra-volumen" min="0" max="1" step="0.01" value="1">
+
         </div>
         <div class="controles">
             <button class="atras control" onclick="cambiarCancion(0)"><i class="bi bi-rewind-fill"></i></button>

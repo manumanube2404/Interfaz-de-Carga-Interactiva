@@ -12,6 +12,21 @@ const iconoMute=document.getElementById('iconoMute');
 
 const iconoPausa=document.getElementById('iconoPausa');
 
+
+volumen.addEventListener('input', () => {
+    cancion.volume = volumen.value;
+    if(cancion.muted==true){
+        cancion.muted=false;
+    }
+    if(cancion.volume==0){
+        iconoMute.classList.add('bi-volume-mute-fill');
+        iconoMute.classList.remove('bi-volume-up-fill');
+    }else{
+        iconoMute.classList.remove('bi-volume-mute-fill');
+        iconoMute.classList.add('bi-volume-up-fill');
+    }
+});
+
 const canciones = [
 
     {
