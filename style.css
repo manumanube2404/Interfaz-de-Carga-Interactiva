@@ -86,7 +86,7 @@ body > *{
     cursor: pointer;
 }
 
-.volumen i{
+.bi-volume-up-fill{
     color: white;
     font-size: 25px;
 }
@@ -124,7 +124,7 @@ body > *{
     transform: scale(1.1); /*escala cuando pasas por encima */
 }
 
-.controles .mute-unmute:hover{
+.controles .pausar-despausar:hover{
     transform: scale(1.2);
 }
 
@@ -140,4 +140,9 @@ body > *{
 
 .iconos i{
     font-size: 30px;
+}
+
+.bi-volume-mute-fill{
+    color: red;
+    font-size: 25px;
 }

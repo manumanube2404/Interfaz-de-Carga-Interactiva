@@ -10,6 +10,8 @@ const btn_siguiente = document.querySelector('.siguiente');
 const btn_mute = document.querySelector('.mute-unmute');
 const iconoMute=document.getElementById('iconoMute');
 
+const iconoPausa=document.getElementById('iconoPausa');
+
 const canciones = [
 
     {
@@ -39,14 +41,26 @@ function actualizar() {
     reproducirCancion();
 }
 
+function mute() {
+    if (cancion.muted == false) {
+        cancion.muted = true;
+        iconoMute.classList.add('bi-volume-mute-fill');
+        iconoMute.classList.remove('bi-volume-up-fill');
+    } else {
+        iconoMute.classList.remove('bi-volume-mute-fill');
+        iconoMute.classList.add('bi-volume-up-fill');
+        cancion.muted = false;
+    }
+}
+
 function pausar() {
     if (cancion.paused) {
         reproducirCancion();
-        iconoMute.classList.add('bi-pause-fill');
-        iconoMute.classList.remove('bi-play-fill');
+        iconoPausa.classList.add('bi-pause-fill');
+        iconoPausa.classList.remove('bi-play-fill');
     }else{
-        iconoMute.classList.remove('bi-pause-fill');
-        iconoMute.classList.add('bi-play-fill');
+        iconoPausa.classList.remove('bi-pause-fill');
+        iconoPausa.classList.add('bi-play-fill');
         pausarCancion();
     }
 }
@@ -69,12 +83,11 @@ function cambiarCancion(num){
         }
     }else{
         CancionActual+=1
-        if(CancionActual>canciones.length){
+        if(CancionActual>=canciones.length){
             CancionActual=0
         }
     }
-    actualizar()
-    
+    actualizar();
 
 }
 

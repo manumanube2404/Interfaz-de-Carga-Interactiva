@@ -19,11 +19,11 @@
             <source src="" type="audio/mpeg">
         </audio>
         <div class="volumen">
-            <button><i class="bi bi-volume-up-fill"></button></i><input type="range" value="0" id="barra-volumen">
+            <button class="mute-unmute" onclick="mute()"><i class="bi bi-volume-up-fill" id="iconoMute"></i></button><input type="range" value="0" id="barra-volumen">
         </div>
         <div class="controles">
             <button class="atras control" onclick="cambiarCancion(0)"><i class="bi bi-rewind-fill"></i></button>
-            <button class="mute-unmute" onclick="pausar()"><i class="bi bi-play-fill" id="iconoMute"></i></button>
+            <button class="pausar-despausar" onclick="pausar()"><i class="bi bi-play-fill" id="iconoPausa"></i></button>
             <button class="siguiente control" onclick="cambiarCancion(1)"><i class="bi bi-fast-forward-fill"></i></button>
         </div>
         <div class="iconos">
