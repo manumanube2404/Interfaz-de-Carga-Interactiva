@@ -62,6 +62,15 @@ body > *{
     opacity: 0.5;
 }
 
+#imagen-cancion {
+    margin-top: 20px;
+    width: 300px;       
+    height: 300px;      
+    object-fit: cover;  /* ajusta la imagen sin deformar */
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
 .volumen {
     display: flex;
     align-items: center; /* centra verticalmente */

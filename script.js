@@ -3,6 +3,8 @@ const texto_dinamico = document.querySelector('.reproductor-musica p');
 
 const volumen = document.getElementById('barra-volumen');
 const cancion = document.getElementById('cancion');
+const imagenCancion = document.getElementById("imagen-cancion");
+
 
 const btn_atras = document.querySelector('.atras');
 const btn_siguiente = document.querySelector('.siguiente');
@@ -43,19 +45,23 @@ const canciones = [ //array con nombres y rutas de las canciones
 
     {
         titulo: 'The Spectacular Spider-Man',
-        ruta: 'musica/The Spectacular Spider-Man.mp3'
+        ruta: 'musica/The Spectacular Spider-Man.mp3',
+        img: 'img/spiderman.jpg'
     },
     {
         titulo: 'Codigo Lyoko',
-        ruta: 'musica/Code Lyoko - Full.mp3'
+        ruta: 'musica/Code Lyoko - Full.mp3',
+        img: 'img/codigo-lyoko.jpg'
     },
     {
         titulo: 'Arriba, Chuta',
-        ruta: 'musica/Spanish 01. Arriba, Chuta.mp3'
+        ruta: 'musica/Spanish 01. Arriba, Chuta.mp3',
+        img: 'img/inazuma.jpg'
     },
     {
         titulo: 'Cancion Random',
         ruta: 'musica/cancion1.mp3',
+        img: 'https://picsum.photos/200/300.jpg',
     }
 ];
 
@@ -64,6 +70,7 @@ let CancionActual = 0
 function actualizar() {
     titulo.textContent = canciones[CancionActual].titulo; //cambia el titulo de la cancion
     cancion.src = canciones[CancionActual].ruta; //reproduce la cancion
+    imagenCancion.src = canciones[CancionActual].img;
     pausar();
 }
 
@@ -134,6 +141,8 @@ document.addEventListener('keydown', (letras) => { //keydown , utiliza las letra
     }
 });
 
-
+cancion.addEventListener('ended', () => { //cuando la cancion termina llama a la funcion "cambiarCancion"
+    cambiarCancion(1); 
+});
 
 actualizar(); //hace que la cancion se active nada mas abrir la pagina
