@@ -9,13 +9,19 @@
 body{
     display: flex;
     justify-content: center; /*centra el contenido*/
-    min-height: 100vh; /*tamaño minimo = 100% de la imagen*/
+    min-height: 100vh; /*tamaño minimo = 100%*/
     align-items: center;
-
-    background: url(/img/Captura_de_pantalla_2022-10-11_160109.png);
-    background-repeat: no-repeat; /*evita que se repita la imagen*/
-    background-size: cover; /*Hace que la imagen tome el tamaño de la pantalla*/
     backdrop-filter: blur(3px) ; /*difuminado*/
+}
+
+.video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
 }
 
 body::before{ /*capa por encima mas oscura*/
@@ -64,8 +70,8 @@ body > *{
 
 #imagen-cancion {
     margin-top: 20px;
-    width: 300px;       
-    height: 300px;      
+    width: 300px;
+    height: 300px;
     object-fit: cover;  /* ajusta la imagen sin deformar */
     border-radius: 12px;
     margin-bottom: 10px;

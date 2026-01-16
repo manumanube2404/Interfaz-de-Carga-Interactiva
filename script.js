@@ -61,7 +61,7 @@ const canciones = [ //array con nombres y rutas de las canciones
     {
         titulo: 'Cancion Random',
         ruta: 'musica/cancion1.mp3',
-        img: 'https://picsum.photos/200/300.jpg',
+        img: 'img/kokushibo.png',
     }
 ];
 
