@@ -9,12 +9,12 @@
 body{
     display: flex;
     justify-content: center; /*centra el contenido*/
-    min-height: 100vh; /*tamaño minimo = 100%*/
+    min-height: 100vh; /*tamaño minimo 100%*/
     align-items: center;
     backdrop-filter: blur(3px) ; /*difuminado*/
 }
 
-.video {
+.video { /*Video de fondo*/
     position: fixed;
     top: 0;
     left: 0;

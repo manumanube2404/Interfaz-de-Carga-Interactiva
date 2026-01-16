@@ -23,7 +23,7 @@ let estadosCarga = [ //array de texto dinamico
 let estadoActual = 0;
 
 setInterval(() => {
-    texto_dinamico.textContent = estadosCarga[estadoActual]; //cambia el texto actual, por uno de la array 
+    texto_dinamico.textContent = estadosCarga[estadoActual]; //cambia el texto actual, por uno de la array
     estadoActual = (estadoActual + 1) % estadosCarga.length; //le suma uno al contador
 }, 2000); //cada 2seg = 2000 miliseg
 
@@ -70,7 +70,7 @@ let CancionActual = 0
 function actualizar() {
     titulo.textContent = canciones[CancionActual].titulo; //cambia el titulo de la cancion
     cancion.src = canciones[CancionActual].ruta; //reproduce la cancion
-    imagenCancion.src = canciones[CancionActual].img;
+    imagenCancion.src = canciones[CancionActual].img; //imagen cancion
     pausar();
 }
 
@@ -123,8 +123,8 @@ function cambiarCancion(num) { //Cambia la cancion seleccionada
     actualizar();
 
 }
- 
-document.addEventListener('keydown', (letras) => { //keydown , utiliza las letras del teclado 
+
+document.addEventListener('keydown', (letras) => { //keydown , utiliza las letras del teclado
     switch (letras.key) { //detecta las letras introducidas por teclado
         case "ArrowRight": // flecha derecha
             cambiarCancion(1);
@@ -142,7 +142,7 @@ document.addEventListener('keydown', (letras) => { //keydown , utiliza las letra
 });
 
 cancion.addEventListener('ended', () => { //cuando la cancion termina llama a la funcion "cambiarCancion"
-    cambiarCancion(1); 
+    cambiarCancion(1);
 });
 
 actualizar(); //hace que la cancion se active nada mas abrir la pagina
